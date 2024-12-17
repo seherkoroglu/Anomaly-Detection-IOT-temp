@@ -66,9 +66,9 @@ class TemperatureCategorizer:
 
     def label_anomalies(self):
         """Anomali etiketlemesi yapar."""
-        # Anomalik veriyi etiketleme
+        # Anomalik veriyi etiketleme: Sıcaklık verilerini daha fazla kategorize ederek etiketleri artırıyoruz.
         self.data['label'] = self.data['temp'].apply(
-            lambda temp: 1 if -1 <= temp <= 1 else 0  # 1: Normal, 0: Anomalik
+            lambda temp: 0 if temp < 0 or temp > 2 else 1  # 0: Anomalik (Very Low ve Very High), 1: Normal (diğerleri)
         )
 
         print("Veri etiketlendi:")
