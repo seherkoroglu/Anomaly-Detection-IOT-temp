@@ -1,4 +1,4 @@
-Bu proje, **sınıf dengesizliği** problemini çözmek için **SMOTE** yöntemi kullanarak lojistik regresyon modeli ile anomali tespiti yapmaktadır. Modelin doğruluğunu artırmak için ağırlıklı sınıf fonksiyonu kullanılır. Ayrıca **öğrenme eğrisi** ile modelin performansı görselleştirilir.
+Bu proje, lojistik regresyon modeli ile anomali tespiti yapmaktadır.  
 
 ---
 
