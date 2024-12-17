@@ -106,7 +106,20 @@ import matplotlib.pyplot as plt
 train_accuracies = []
 test_accuracies = []
 
+# Eğitim döngüsünde her epoch sonunda doğrulukları kaydedin
+for epoch in range(1, 11):
+    # Modeli eğit (eğitim kodunuzu buraya ekleyin)
+    model.fit(X_train_scaled, y_train)
 
+    # Eğitim doğruluğunu hesapla
+    train_accuracy = model.score(X_train_scaled, y_train)
+
+    # Test doğruluğunu hesapla
+    test_accuracy = model.score(X_test_scaled, y_test)
+
+    # Doğrulukları listelere ekle
+    train_accuracies.append(train_accuracy)
+    test_accuracies.append(test_accuracy)
 
 # Confusion Matrix görselleştirme
 plt.figure(figsize=(8, 6))
@@ -117,7 +130,7 @@ plt.xlabel("Tahmin")
 plt.ylabel("Gerçek")
 plt.show()
 
-plt.figure(figsize=(10, 6))
+# Eğitim ve test doğruluğu grafiği
 plt.plot(range(1, 11), train_accuracies, label='Eğitim Doğruluğu', marker='o')
 plt.plot(range(1, 11), test_accuracies, label='Test Doğruluğu', marker='o')
 plt.title("Eğitim ve Test Doğruluğu")
@@ -126,6 +139,7 @@ plt.ylabel("Doğruluk")
 plt.legend()
 plt.grid(True)
 plt.show()
+
 
 # Kafka Tüketici ve Üretici
 class KafkaConsumerProducer:
